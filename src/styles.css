@@ -9,21 +9,21 @@ canvas {
 }
 
 body {
-  background: radial-gradient(circle, #373740 0%, #272730 29%, #171720 100%);;
+  background: radial-gradient(at 50% 100%, #873740 0%, #272730 40%, #171720 80%, #070710 100%);
 }
 
 h1 {
   position: absolute;
-  top: 50%;
+  top: 150px;
   left: 50%;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 800;
-  font-size: 15em;
-  transform: translate3d(-50%,-70%,0);
+  font-size: 14em;
+  transform: translate3d(-50%,0,0);
   margin: 0;
   color: #cc7b32;
   line-height: 0.9em;
-  letter-spacing: -15px;
+  letter-spacing: -5px;
   text-align: center;
 }
   
@@ -76,7 +76,7 @@ span.header-left {
 
 @media only screen and (max-width: 1000px) {
   h1 {
-    transform: translate3d(-50%,-100%,0);
+    transform: translate3d(-50%,0,0);
     font-size: 8em;
     letter-spacing: -5px;
   }
@@ -84,7 +84,7 @@ span.header-left {
 
 @media only screen and (max-width: 500px) {
   h1 {
-    transform: translate3d(-50%,-130%,0);
+    transform: translate3d(-50%,0%,0);
     font-size: 4em;
     letter-spacing: -5px;
   }
