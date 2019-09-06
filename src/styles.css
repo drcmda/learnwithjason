@@ -16,16 +16,33 @@ h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 800;
-  font-size: 25em;
-  transform: translate3d(-50%,-50%,0);
+  font-size: 15em;
+  transform: translate3d(-50%,-70%,0);
   margin: 0;
-  color: #373740;
+  color: #cc7b32;
+  line-height: 0.9em;
+  letter-spacing: -15px;
+  text-align: center;
+}
+  
+h1 > span {
+  white-space: pre;
+}
+
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  background: linear-gradient(0deg, rgba(63, 12, 88, 0.2) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 span.header {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
   position: absolute;
   display: inline-block;
@@ -39,7 +56,7 @@ span.header {
 }
 
 span.header-left {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 700;
   position: absolute;
   display: inline-block;
@@ -59,18 +76,22 @@ span.header-left {
 
 @media only screen and (max-width: 1000px) {
   h1 {
-    font-size: 15em;
+    transform: translate3d(-50%,-100%,0);
+    font-size: 8em;
+    letter-spacing: -5px;
   }
 }
 
 @media only screen and (max-width: 500px) {
   h1 {
-    font-size: 10em;
+    transform: translate3d(-50%,-130%,0);
+    font-size: 4em;
+    letter-spacing: -5px;
   }
 }
 
 a {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: inherit;

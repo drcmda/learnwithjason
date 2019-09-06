@@ -39,14 +39,14 @@ function Model({ url }) {
 export default function App() {
   return (
     <>
-      <h1>HELLO</h1>
+      <h1>LEARN<br/><span>W/ JASON</span></h1>
       <Canvas
         camera={{ position: [0, 0, 15] }}
         onCreated={({ gl }) => {
           gl.shadowMap.enabled = true
           gl.shadowMap.type = THREE.PCFSoftShadowMap
         }}>
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={1} />
         <pointLight intensity={2} position={[-10, -25, -10]} />
         <spotLight
           castShadow
@@ -56,7 +56,7 @@ export default function App() {
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
         />
-        <fog attach="fog" args={['#272730', 14, 18]} />
+        <fog attach="fog" args={['#cc7b32', 16, 20]} />
         <Model url="/scene-draco.gltf" />
         <Controls
           autoRotate
@@ -69,6 +69,7 @@ export default function App() {
           minPolarAngle={Math.PI / 2}
         />
       </Canvas>
+      <div class="layer" />
       <a href="https://github.com/drcmda/react-three-fiber" class="top-left" children="Github" />
       <a href="https://twitter.com/0xca0a" class="top-right" children="Twitter" />
       <a href="https://github.com/react-spring/react-spring" class="bottom-left" children="+ react-spring" />
