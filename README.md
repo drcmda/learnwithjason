@@ -1,6 +1,6 @@
 ![](intro.jpg)
 
-Live version: learnwithjason.surge.sh (wait a little for the files to load)
+Live version: https://learnwithjason.surge.sh (wait a little for the files to load)
 
     git clone https://github.com/drcmda/learnwithjason
     cd learnwithjason
@@ -12,6 +12,8 @@ Live version: learnwithjason.surge.sh (wait a little for the files to load)
 This is a demo Jason Lengstorf and I were building together in a learn-with-jason episode on Twitch, see: https://twitter.com/jlengstorf/status/1164277062762287104
 
 # Links
+
+learn-with-json: https://www.youtube.com/channel/UCnty0z0pNRDgnuoirYXnC5A
 
 threejs: https://threejs.org
 
