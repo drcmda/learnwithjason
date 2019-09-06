@@ -19,6 +19,8 @@ threejs: https://threejs.org
 
 react-three-fiber: https://github.com/react-spring/react-three-fiber
 
+threejs fundamentals: https://threejsfundamentals.org
+
 sketchfab: http://sketchfab.com
 
 blender: https://www.blender.org
