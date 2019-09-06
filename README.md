@@ -1,6 +1,6 @@
 ![](intro.jpg)
 
-Live version: learnwithjason.surge.sh (wait a little for the files to load)
+Live version: https://learnwithjason.surge.sh (wait a little for the files to load)
 
     git clone https://github.com/drcmda/learnwithjason
     cd learnwithjason
