@@ -47,7 +47,7 @@ export default function App() {
           gl.shadowMap.type = THREE.PCFSoftShadowMap
         }}>
         <ambientLight intensity={0.5} />
-        <pointLight intensity={2} position={[-10, -25, -10]} color="violet" />
+        <pointLight intensity={2} position={[-10, -25, -10]} />
         <spotLight
           castShadow
           intensity={1.25}
