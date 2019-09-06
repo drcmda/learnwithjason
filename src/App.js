@@ -67,9 +67,9 @@ export default function App() {
         />
       </Canvas>
       <div className="layer" />
-      <a href="https://github.com/drcmda/react-three-fiber" className="top-left" children="Github" />
+      <a href="https://github.com/drcmda/learnwithjason" className="top-left" children="Github" />
       <a href="https://twitter.com/0xca0a" className="top-right" children="Twitter" />
-      <a href="https://github.com/react-spring/react-spring" className="bottom-left" children="+ react-spring" />
+      <a href="https://github.com/drcmda/react-three-fiber" className="bottom-left" children="+ react-three-fiber" />
     </>
   )
 }
