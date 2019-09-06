@@ -1,7 +1,5 @@
-import * as THREE from 'three'
-import React, { useRef, useState, useEffect, useMemo } from 'react'
+import React, { useRef } from 'react'
 import { Canvas, useThree, useRender, useLoader, extend } from 'react-three-fiber'
-import { useSpring, a } from 'react-spring/three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
@@ -68,10 +66,10 @@ export default function App() {
           minPolarAngle={Math.PI / 2}
         />
       </Canvas>
-      <div class="layer" />
-      <a href="https://github.com/drcmda/react-three-fiber" class="top-left" children="Github" />
-      <a href="https://twitter.com/0xca0a" class="top-right" children="Twitter" />
-      <a href="https://github.com/react-spring/react-spring" class="bottom-left" children="+ react-spring" />
+      <div className="layer" />
+      <a href="https://github.com/drcmda/react-three-fiber" className="top-left" children="Github" />
+      <a href="https://twitter.com/0xca0a" className="top-right" children="Twitter" />
+      <a href="https://github.com/react-spring/react-spring" className="bottom-left" children="+ react-spring" />
     </>
   )
 }
