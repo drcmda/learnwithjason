@@ -20,16 +20,22 @@ function Model({ url }) {
   })
   return (
     <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -7, 0]} scale={[7, 7, 7]}>
-      {model.map(({ geometry, material }) => (
-        <mesh
-          key={geometry.uuid}
-          rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}
-          geometry={geometry}
-          castShadow
-          receiveShadow>
-          <meshStandardMaterial attach="material" map={material.map} roughness={1} />
-        </mesh>
-      ))}
+      {model.map(({ geometry, material }) => {
+        // There are two buffergeometries in this gltf
+        // Save some GPU by rendering the rocks a little less vivd than the rocket
+        const rocks = geometry.index.count < 80000
+        const Material = rocks ? 'meshLambertMaterial' : 'meshStandardMaterial'
+        return (
+          <mesh
+            key={geometry.uuid}
+            rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}
+            geometry={geometry}
+            castShadow={!rocks}
+            receiveShadow={!rocks}>
+            <Material attach="material" map={material.map} roughness={1} />
+          </mesh>
+        )
+      })}
     </group>
   )
 }
