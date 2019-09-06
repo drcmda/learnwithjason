@@ -7988,10 +7988,10 @@ react-spring@^8.0.27:
     "@babel/runtime" "^7.3.1"
     prop-types "^15.5.8"
 
-react-three-fiber@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-2.4.2.tgz#b49c415b9d338aed5ba6acec97e3b8e98d238e4d"
-  integrity sha512-b3kNoFTbgYPCMPu0PzoVrM1si6R7oGhd5eo0f6h18f4zWQV0LRLJnVxdenrV+BDgqvzULFNmQNzKthQw2gi01A==
+react-three-fiber@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/react-three-fiber/-/react-three-fiber-2.4.3.tgz#2eb16d2ba7a8b40e37a8a994507745b2769162db"
+  integrity sha512-XL5GxJyoX2FY1UjdPmlKU95+NCR7UIVgI4upQEXockpp41K5z+hXoC3S8gvJbd0XfRs1dii1uk5F9pz9vp/IvQ==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@types/three" "^0.103.2"

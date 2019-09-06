@@ -39,13 +39,12 @@ function Model({ url }) {
 export default function App() {
   return (
     <>
-      <h1>LEARN<br/><span>w/JASON</span></h1>
-      <Canvas
-        camera={{ position: [0, 0, 15] }}
-        onCreated={({ gl }) => {
-          gl.shadowMap.enabled = true
-          gl.shadowMap.type = THREE.PCFSoftShadowMap
-        }}>
+      <h1>
+        LEARN
+        <br />
+        <span>w/JASON</span>
+      </h1>
+      <Canvas camera={{ position: [0, 0, 15] }} shadowMap>
         <ambientLight intensity={1.5} />
         <pointLight intensity={2} position={[-10, -25, -10]} />
         <spotLight
