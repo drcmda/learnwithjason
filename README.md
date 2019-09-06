@@ -9,7 +9,7 @@ Live version: https://learnwithjason.surge.sh (wait a little for the files to lo
 
 # What's this?
 
-This is a demo Jason Lengstorf and I were building together in a learn-with-jason episode on Twitch, see: https://twitter.com/jlengstorf/status/1164277062762287104
+This is a demo [Jason Lengstorf](https://twitter.com/jlengstorf) [and I](https://twitter.com/0xca0a) were building together in a learn-with-jason episode on Twitch, see: https://twitter.com/jlengstorf/status/1164277062762287104
 
 # Links
 
