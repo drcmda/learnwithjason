@@ -1,4 +1,4 @@
-![](intro.jpg)
+![](intro.png)
 
 Live version: https://learnwithjason.surge.sh (wait a little for the files to load)
 
