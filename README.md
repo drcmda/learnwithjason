@@ -13,6 +13,8 @@ This is a demo Jason Lengstorf and I were building together in a learn-with-jaso
 
 # Links
 
+learn-with-json: https://www.youtube.com/channel/UCnty0z0pNRDgnuoirYXnC5A
+
 threejs: https://threejs.org
 
 react-three-fiber: https://github.com/react-spring/react-three-fiber
