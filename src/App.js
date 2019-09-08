@@ -1,5 +1,7 @@
-import React, { useRef } from 'react'
+import * as THREE from 'three'
+import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useThree, useRender, useLoader, extend } from 'react-three-fiber'
+import { useTransition, a } from 'react-spring'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
@@ -20,7 +22,7 @@ function Model({ url }) {
   })
   return (
     <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -7, 0]} scale={[7, 7, 7]}>
-      {model.map(({ geometry, material }) => {
+      {model.map(({ geometry, material }) => {
         // There are two buffergeometries in this gltf
         // Save some GPU by rendering the rocks a little less vivd than the rocket
         const rocks = geometry.index.count < 80000
@@ -37,6 +39,34 @@ function Model({ url }) {
         )
       })}
     </group>
+  )
+}
+
+function Loading() {
+  const [finished, set] = useState(false)
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    THREE.DefaultLoadingManager.onLoad = () => set(true)
+    THREE.DefaultLoadingManager.onProgress = (url, itemsLoaded, itemsTotal) =>
+      setWidth((itemsLoaded / itemsTotal) * 200)
+  }, [])
+
+  const props = useTransition(finished, null, {
+    from: { opacity: 1, width: 0 },
+    leave: { opacity: 0 },
+    update: { width },
+  })
+
+  return props.map(
+    ({ item: finished, key, props: { opacity, width } }) =>
+      !finished && (
+        <a.div className="loading" key={key} style={{ opacity }}>
+          <div className="loading-bar-container">
+            <a.div className="loading-bar" style={{ width }} />
+          </div>
+        </a.div>
+      ),
   )
 }
 
@@ -73,6 +103,7 @@ export default function App() {
         />
       </Canvas>
       <div className="layer" />
+      <Loading />
       <a href="https://github.com/drcmda/learnwithjason" className="top-left" children="Github" />
       <a href="https://twitter.com/0xca0a" className="top-right" children="Twitter" />
       <a href="https://github.com/drcmda/react-three-fiber" className="bottom-left" children="+ react-three-fiber" />
