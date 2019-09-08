@@ -1,6 +1,7 @@
 html,
 body,
 #root,
+.bg,
 canvas {
   margin: 0;
   padding: 0;
@@ -9,6 +10,11 @@ canvas {
 }
 
 body {
+  background: #171717;
+}
+
+.bg {
+  position: absolute;
   background: radial-gradient(at 50% 100%, #873740 0%, #272730 40%, #171720 80%, #070710 100%);
 }
 
@@ -42,14 +48,14 @@ h1 {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 800;
   font-size: 10em;
-  transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%, 0, 0);
   margin: 0;
   color: #cc7b32;
   line-height: 0.9em;
   letter-spacing: -5px;
   text-align: center;
 }
-  
+
 h1 > span {
   white-space: pre;
 }
@@ -99,7 +105,7 @@ span.header-left {
 
 @media only screen and (max-width: 1000px) {
   h1 {
-    transform: translate3d(-50%,0,0);
+    transform: translate3d(-50%, 0, 0);
     font-size: 8em;
     letter-spacing: -5px;
   }
@@ -107,7 +113,7 @@ span.header-left {
 
 @media only screen and (max-width: 500px) {
   h1 {
-    transform: translate3d(-50%,0%,0);
+    transform: translate3d(-50%, 0%, 0);
     font-size: 4em;
     letter-spacing: -5px;
   }

@@ -73,6 +73,7 @@ function Loading() {
 export default function App() {
   return (
     <>
+      <div className="bg" />
       <h1>
         LEARN
         <br />
