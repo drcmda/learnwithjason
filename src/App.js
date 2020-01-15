@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import React, { useRef, useState, useEffect } from 'react'
-import { Canvas, useThree, useRender, useLoader, extend } from 'react-three-fiber'
+import { Canvas, useThree, useFrame, useLoader, extend } from 'react-three-fiber'
 import { useTransition, a } from 'react-spring'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
@@ -10,7 +10,7 @@ extend({ OrbitControls })
 const Controls = props => {
   const { gl, camera } = useThree()
   const ref = useRef()
-  useRender(() => ref.current.update())
+  useFrame(() => ref.current.update())
   return <orbitControls ref={ref} args={[camera, gl.domElement]} {...props} />
 }
 
