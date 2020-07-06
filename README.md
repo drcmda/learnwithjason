@@ -13,7 +13,7 @@ This is a demo Jason Lengstorf ([@jlengstorf](https://twitter.com/jlengstorf)) a
 
 # Links
 
-learn-with-jason: https://www.youtube.com/channel/UCnty0z0pNRDgnuoirYXnC5A
+learn-with-jason: https://www.youtube.com/watch?v=1rP3nNY2hTo
 
 threejs: https://threejs.org
 
