@@ -1,43 +1,18 @@
 import * as THREE from 'three'
-import React, { useRef, useState, useEffect } from 'react'
-import { Canvas, useThree, useFrame, useLoader, extend } from 'react-three-fiber'
+import React, { Suspense, useState, useEffect } from 'react'
+import { Canvas, useLoader } from 'react-three-fiber'
 import { useTransition, a } from 'react-spring'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
-
-extend({ OrbitControls })
-const Controls = props => {
-  const { gl, camera } = useThree()
-  const ref = useRef()
-  useFrame(() => ref.current.update())
-  return <orbitControls ref={ref} args={[camera, gl.domElement]} {...props} />
-}
+import { OrbitControls, draco } from 'drei'
 
 function Model({ url }) {
-  const model = useLoader(GLTFLoader, url, loader => {
-    const dracoLoader = new DRACOLoader()
-    dracoLoader.setDecoderPath('/draco-gltf/')
-    loader.setDRACOLoader(dracoLoader)
-  })
+  const { nodes, materials } = useLoader(GLTFLoader, url, draco())
   return (
     <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -7, 0]} scale={[7, 7, 7]}>
-      {model.map(({ geometry, material }) => {
-        // There are two buffergeometries in this gltf
-        // Save some GPU by rendering the rocks a little less vivd than the rocket
-        const rocks = geometry.index.count < 80000
-        const Material = rocks ? 'meshLambertMaterial' : 'meshStandardMaterial'
-        return (
-          <mesh
-            key={geometry.uuid}
-            rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}
-            geometry={geometry}
-            castShadow={!rocks}
-            receiveShadow={!rocks}>
-            <Material attach="material" map={material.map} roughness={1} />
-          </mesh>
-        )
-      })}
+      <group rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}>
+        <mesh castShadow receiveShadow geometry={nodes.planet001.geometry} material={materials.scene} />
+        <mesh castShadow receiveShadow geometry={nodes.planet002.geometry} material={materials.scene} />
+      </group>
     </group>
   )
 }
@@ -79,20 +54,24 @@ export default function App() {
         <br />
         <span>w/JASON</span>
       </h1>
-      <Canvas camera={{ position: [0, 0, 15] }} shadowMap>
-        <ambientLight intensity={1.5} />
-        <pointLight intensity={2} position={[-10, -25, -10]} />
+      <Canvas colorManagement shadowMap camera={{ position: [0, 0, 15] }}>
+        <ambientLight intensity={0.1} />
+        <pointLight intensity={1} position={[-10, -25, -10]} color="orange" />
         <spotLight
           castShadow
-          intensity={1.25}
-          angle={Math.PI / 8}
-          position={[25, 25, 15]}
-          shadow-mapSize-width={2048}
-          shadow-mapSize-height={2048}
+          intensity={2.25}
+          angle={0.2}
+          penumbra={1}
+          position={[25, 25, 25]}
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-bias={-0.0001}
         />
         <fog attach="fog" args={['#cc7b32', 16, 20]} />
-        <Model url="/scene-draco.gltf" />
-        <Controls
+        <Suspense fallback={null}>
+          <Model url="/scene-draco.gltf" />
+        </Suspense>
+        <OrbitControls
           autoRotate
           enablePan={false}
           enableZoom={false}

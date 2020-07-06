@@ -253,7 +253,7 @@
       ]
     },
     {
-      "name": "planet.001",
+      "name": "planet.002",
       "primitives": [
         {
           "attributes": {
@@ -346,7 +346,7 @@
     },
     {
       "mesh": 1,
-      "name": "planet.001"
+      "name": "planet.002"
     }
   ],
   "samplers": [
