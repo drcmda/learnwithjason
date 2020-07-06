@@ -54,9 +54,9 @@ export default function App() {
         <br />
         <span>w/JASON</span>
       </h1>
-      <Canvas colorManagement shadowMap camera={{ position: [0, 0, 15] }}>
-        <ambientLight intensity={0.1} />
-        <pointLight intensity={1} position={[-10, -25, -10]} color="orange" />
+      <Canvas shadowMap camera={{ position: [0, 0, 15] }}>
+        <ambientLight intensity={0.75} />
+        <pointLight intensity={1} position={[-10, -25, -10]} />
         <spotLight
           castShadow
           intensity={2.25}
